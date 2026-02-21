@@ -1,0 +1,72 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
+.PrincipalContenedor-General {
+    width: 600px;
+    height: auto;
+    padding: 10px;
+    margin-bottom: 30px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(from color r g b);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+border: 1px solid #ccc;
+  box-shadow: 
+    0 5px 0 -1px white, 0 5px 0 0 #ccc,
+    0 10px 0 -2px white, 0 10px 0 -1px #ccc;
+}
+
+.contenedorInput {
+    color: rgb(92, 92, 92);
+    width: 100%;
+    font-size: 18px;
+    border: none;
+}
+
+.tarea-item{
+    border-bottom: 1px solid;
+    color: rgb(203, 203, 203);
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.contenedorInput input {
+    border: none;
+    border-bottom: 1px solid rgba(243, 242, 242, 0.517);
+    border-radius: 0;
+    height: 50px;
+    font-size: 20px;
+}
+
+.retornoInput {
+    margin: 20px 0 20px 0;
+    border-bottom: 1px solid rgba(215, 215, 215, 0.517);
+    padding: 0px;
+}
+
+.retornoInput h2 {
+    font-size: 20px;
+    color: rgb(80, 80, 80);
+}
+
+.retornoInput span i {
+    font-size: 15px;
+    float: right;
+    cursor: pointer;
+    color: rgba(148, 2, 2, 0.781);
+}
+
+.retornoInput span i:hover {
+    font-size: 17px;
+    color: rgb(187, 187, 187);
+}
+
+.tarea-item .icono-eliminar {
+    display: none; 
+    cursor: pointer;
+    color: red;
+}
+
+.tarea-item:hover .icono-eliminar {
+    display: block; 
+}
