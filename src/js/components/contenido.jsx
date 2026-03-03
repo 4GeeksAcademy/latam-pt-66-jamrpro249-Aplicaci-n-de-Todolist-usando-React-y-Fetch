@@ -20,13 +20,13 @@ const Contenido = () => {
         }
     };
 
-    const obtenertextoInput = () => {
+    function obtenertextoInput() {
         fetch(`${API_USER}${USUARIO}`, {
             method: "GET",
             headers: { "Content-Type": "application/json" },
         })
             .then((resp) => {
-                if (resp.status === 422) return crearUsuario();
+                if (resp.status === 404) return crearUsuario();
                 return resp.json();
             })
             .then((result) => {
@@ -37,7 +37,7 @@ const Contenido = () => {
             .catch(err => console.error("Error al obtener:", err));
     }
 
-    const agregartextoInput = () => {
+    function agregartextoInput() {
         if (textoInput.trim() !== "") {
             const nueva = { label: textoInput, is_done: false };
 
@@ -55,7 +55,7 @@ const Contenido = () => {
         }
     }
 
-    const eliminartextoInput = (id, index) => {
+    function eliminartextoInput(id, index) {
         fetch(`${API_TODO}${id}`, {
             method: "DELETE",
             headers: { "Content-Type": "application/json" },
@@ -69,7 +69,7 @@ const Contenido = () => {
             .catch(err => console.error("Error al eliminar:", err));
     }
 
-    const eliminarUsuario = () => {
+    function eliminarUsuario() {
         fetch(`${API_USER}${USUARIO}`, {
             method: "DELETE",
             headers: { "Content-Type": "application/json" },
@@ -81,7 +81,7 @@ const Contenido = () => {
         });
     }
 
-    const crearUsuario = () => {
+    function crearUsuario() {
         fetch(`${API_USER}${USUARIO}`, {
             method: "POST",
             headers: { "Content-Type": "application/json" }
@@ -125,7 +125,7 @@ const Contenido = () => {
                 <span>{listatextoInputs.length} items left</span>
                 <div className="btns-container">
                     <button className="btn btn-sm btn-success me-2" onClick={obtenertextoInput}>Cargar Tareas</button>
-                    <button className="btn btn-sm btn-danger" onClick={eliminarUsuario}>Eliminar Todo</button>
+                    <button className="btn btn-sm btn-danger" onClick={eliminarUsuario}>Limpiar Todo</button>
                 </div>
             </div>
         </div>
